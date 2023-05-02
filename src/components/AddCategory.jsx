@@ -1,4 +1,5 @@
 import { useState } from "react"
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({ onNewCategory }) =>{
     //console.log(onNewCategory); //Recibe la funcion del otro componente
@@ -40,4 +41,9 @@ export const AddCategory = ({ onNewCategory }) =>{
         </form>
     )
 
+}
+
+AddCategory.propTypes = {
+    onNewCategory: PropTypes.func.isRequired
+    
 }

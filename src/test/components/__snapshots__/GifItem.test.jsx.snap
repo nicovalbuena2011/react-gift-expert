@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Prueba en el componente GifItem  Debe tener el titulo y la url obligatoria. se compara con el snapshot  1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Naruto"
+      src="https://localhost/url"
+    />
+    <p>
+       
+      Naruto
+       
+    </p>
+  </div>
+</div>
+`;

@@ -1,29 +1,22 @@
 import { useEffect, useState } from "react";
 import { getGifs } from "../helpers/getGifs";
 import { GiftItem } from "./GifItem";
+import { useFetchGifs } from "../hooks/useFetchGifs";
 
 
 export const GiftGrid = ({ category }) =>{
 
-    const [ images, setImages ] = useState([]);
-
-    const getImages = async () =>{
-        const newImages = await getGifs( category );
-        setImages( newImages );
-        
-    }
-    
-    //Este hook hace que se llame la funcion una unica vez cada que se vuelve a renderizar el componente.
-    //El [  ], indica la condicion para que se dispare el evento, en este caso cuando se renderice el 
-    //Componente.
-    useEffect( ()=>{
-        getImages();
-    }, [] );
-    
+    //console.log( category );
+    //Custom hook
+    const { images, isLoading } = useFetchGifs( category ); 
 
     return(
         <>
             <h3>{ category }</h3>
+
+            {
+                isLoading && ( <h2> Cargando </h2> )
+            }
 
             <div className="card-grid">
                 {   
